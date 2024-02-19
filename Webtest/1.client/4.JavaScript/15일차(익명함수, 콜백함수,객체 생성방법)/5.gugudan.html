@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.구구단.html</title>
+    <script>
+        function gugudan(){
+            //alert("gugudan()호출") //디버깅용 (alert는 작동되는데 아래가 안될 경우는 오탈자일 확률높다.에러 잡는 용도)
+            //let dan=prompt("단을 입력하세요!",""); //매개변수O, 반환값O => 지역변수
+
+            //NaN=> Not a number(숫자가 아니라는 에러 메시지)
+        //(2)
+            /*let i=1; //1~9 (1)
+            while(i<=9){
+                document.write(dan+"*"+i+"="+(dan*i)+"<br>") //입력 받은 값이 문자열상수여도 계산식과 연결되면 숫자로 인식됨
+                i++; //이거 없으면 무한루프
+            }*/
+            /*let dan=prompt("단을 입력하세요!","");
+            if(dan!=""){ //"" 무언가를 적었다.
+                if(dan<=0){
+                    alert("0을 입력하거나 음수는 입력불가입니다.")
+                }else{
+                    for(let i=1; i<=9;i++){
+                        document.write(dan+"*"+i+"="+(dan*i)+"<br>")
+                    }
+                }
+            }else{
+                document.write("먼저 단을 입력해야합니다.\n자동종료됩니다.");
+            }*/
+
+            //(3)
+            let dan=prompt("단을 입력하세요!","");
+            if(dan!=""){ //"" 무언가를 적었다.
+                if(dan<=0){
+                    alert("0을 입력하거나 음수는 입력불가입니다.")
+                    return; //break 구문 대신 사용하는 탈출문 return; return변수or수식or객체;
+                }//else{
+                    for(let i=1; i<=9;i++){
+                        document.write(dan+"*"+i+"="+(dan*i)+"<br>")
+                    }
+             //   }
+            }else{
+                document.write("먼저 단을 입력해야합니다.\n자동종료됩니다.");
+            }        
+        }
+    </script>
+</head>
+<body>
+    <script>
+        gugudan(); //자동 호출
+        document.write("==================<p>");
+        input_string="2+3";//계산식
+        a="444"
+        b="-123"
+        c="123.45"; //실수(소수점)
+        document.write("input_string: "+input_string+"<br>"); //""때문에 계산이 되지 않은 상태로 나옴
+        document.write("eval()함수 호출: "+eval(input_string)); //eval은 문자열을 상수로 바꿔줌, 계산된 채로 나옴
+        document.write("parseInt 함수: "+parseInt(a)+"<br>"); // 곁따옴표를 때서 문자열상수로 숫자로 변환시키는 함수, 계산은 되지 않음
+        document.write("parseInt 함수: "+parseInt(b)+"<br>"); 
+        document.write("parseInt 함수: "+parseInt(c)+"<br>"); //소수점을 없앰, 정수만 됨(소수점까지 계산하는 것은 parseFloat)
+        document.write("parseFloat 함수: "+parseFloat(c)+"<br>"); //문자열 상수를 소수점으로 변환
+
+        // 주문서 : 수량(input box=> 기본값: 문자열 상수임) -> 웹상에서 숫자를 입력받을 경우
+        document.write("isNaN(45): "+isNaN(45)+"<br>");// 숫자이면 false
+        document.write("isNaN('45'): "+isNaN("45")+"<br>");// 문자이면 True
+
+    </script>
+    <p></p>
+    <!-- 버튼을 클릭한 경우에만 함수호출(수동호출) -->
+    <input type="button" value="구구단 계산" onclick="gugudan()">
+</body>
+</html>

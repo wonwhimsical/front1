@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.While. do-while 구문.html</title>
+</head>
+<body>
+    <script>
+        /*
+        반복문-> 똑같은 문장을 정해진 횟수만큼 계속해서 반복적으로 실행하는 구문
+        => while, do~while, for문을 이용
+              while, do~while => 반복할 횟수 O or 반복할 횟수X (ex 외부의 파일을 불러오는 경우-> 파일길이X)
+              for문=> 반복할 회수 O*/
+
+        /*while
+        형식) while(조건식) //1) -> 조건식이 거짓이 될 때까지 반복하는 문장
+                    수행1; //2)
+        특징) 처음부터 조건식이 거짓일 경우 한번도 수행되지 않음 (값이 계속 바뀌기에 const안됨)
+                          만족하면 수행 후 조건체크 시 거짓이 될때 까지 반복한다.*/
+        
+        /* do~while
+        do { 
+                수행구문; //1
+        }while(조건식)2
+        특징) 처음부터 조건식이 거짓이어도 최소한번은 무조건 수행O, 조건체크 시 거짓이 될때 까지 반복
+        */
+
+        /*(1) 방법을 모르면 이렇게 비효율적임
+        document.write("while 구문 연습1<br>");
+        document.write("while 구문 연습1<br>");
+        document.write("while 구문 연습1<br>");
+        document.write("while 구문 연습1<br>");
+        document.write("while 구문 연습1<br>");*/
+
+        let i=6; //반복횟수를 기억할 변수
+
+        /*(2)무한루프 => 끝도 없이 계속 수행되는 문장들 (반복문에 실수를 하면 메모리 공간이 없어 멈춤)
+                               => 강제종료 => 블럭처리 반드시 필요(두문장 이상 시) 하나하나 순차적으로 해결하면 내려가는 방식, 
+                                                           블럭처리를 하지 않으면 문장1을 처리하지 못해 무한루프에 빠짐, 
+                                                           블럭처리를 하면 문장1-> 문장2-> 문장1->문장2를 반복하게됨 즉 우선순위가 바뀜*/ 
+        /*
+        while (i<=10){
+            document.write("while 구문 연습"+i+"<br>"); 
+            i++; //i=i+1 반복문은 조건을 거짓으로 만들어주는 구문이 반드시 필요 (블럭처리를 안하면 1문장에서 못 나옴)
+        }
+        document.write("while 구문 종료");
+        */
+       do {
+        document.write("do~while 구문 연습"+i+"<br>"); 
+        i++;  //2가됨
+       }while(i<=5); //2에서부터 시작함
+       document.write("do~while 구문 연습종료"+"<br>"); 
+    </script>
+</body>
+</html>

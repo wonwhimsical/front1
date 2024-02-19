@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매운맛_2.</title>
+</head>
+<body>
+    <script>
+       let name,hour,code,salary;
+       name=prompt("이름을 입력해주세요")
+       code=prompt("1~4까지의 코드를 입력해주세요!")
+       hour=prompt("작업시간을 적어주세요!")
+       if(code==1){
+        salary=hour*2000;
+       }
+       else if(code==2){
+        salary=hour*2500;
+       }
+       else if(code==3){
+        salary=hour*3000;
+       }
+       else if(code==4){
+        salary=hour*4000;
+       }else{
+        alert("없는 값입니다.");
+       }
+       document.write(name+" 작업시간:"+hour+" 코드:"+code+" 급여"+salary)
+    </script>
+</body>
+</html>

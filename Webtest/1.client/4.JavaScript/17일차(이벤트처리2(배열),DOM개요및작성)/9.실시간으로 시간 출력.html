@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.실시간으로 시간 출력.html</title>
+    <script>
+         let isStop;
+        function startTime(){
+            // 오늘날짜를 구해서 시간만 출력 ,new가 들어가는 것은 대부분 객체
+            today=new Date(); //오늘 날짜를 구해주는 날짜객체 생성
+            let span=document.getElementById("hour");
+            // alert(span); 디버깅용
+
+            let text=today.getHours()+"시"+today.getMinutes()+"분"+today.getSeconds()+"초"; //시간 출력코딩
+            span.innerHTML=text;
+            //특정함수를 초단위로 계속해서 호출해주는 함수 setTimeout(1.호출할 함수명,2.(1000))=>1초
+            isStop=setTimeout('startTime()',1000) //여기다가 let으로 isStop선언 시 아래서 멈출 수가 없음(가져올수가 없으므로)
+        }
+        function stopTime(){
+            //clearTimeout(멈출 setTimeout의 정보 필요)
+            clearTimeout(isStop); //멈추는 역할
+        }
+    </script>
+</head>
+<body>
+    <h3>오늘의 시간 출력하기</h3>
+    오늘의 시간: <span id="hour"></span> <p></p>
+    <input type="button" value="시작" name="start" onclick="startTime()"> <!--value값은 한글로 name값은 영어로-->
+    <input type="button" value="멈춤" name="stop" onclick="stopTime()">
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.input3.html</title>
+</head>
+<body>
+    원하는 날짜와 시간을 설정해주세요 <p></p>
+    <!-- html에서 추가된 코드임, date(날짜), 시간(time), input:date 
+            name="date" => 년, 월,일이 다 저장된 상태
+    -->
+    <input type="date" name="date"><br><!--chrome위주임, (edg, safari 됨, 개인적)-->
+    <input type="time" name="time" ><br>
+    <input type="search" name=""> <br> <!--검색 글 자동 삭제X  내장-->
+    <input type="color" name="color" > <br> <!--색상표-->
+    <hr>
+    과목 : <input type="text" name="course" placeholder="과목을 입력하세요" autofocus list="sugguest"> <br>
+    선택 : <input type="text" name="course" placeholder="선택 과목을 입력하세요" autofocus list="choice"><p></p>
+    <!--datalist태그
+        datalist태그 -> 텍스트박스에 연결시켜서 보여주는 컴포넌트 태그
+        input type="text" => list 속성 필요 => id값 연결
+        datalist의 id값을 연결 (연결시킬 datalist의 구분자로 사용)
+
+        id=> 1) css에서의 id 선택자로 사용
+                 2) 자바스크립트(언어), jQuery에서 사용
+    -->
+    <datalist id="sugguest">
+        <option value="자바">
+        <option value="웹프로그래밍">
+        <option value="화면구현">
+    </datalist>
+
+    <datalist id="choice">
+        <option value="파이썬">
+        <option value="빅 데이터">
+        <option value="DB 설계">
+    </datalist> 
+
+    <!--기타 (설치 진행 상태를 막대그래프로 표현)-->
+    <progress value="20" max="100"></progress><p></p>
+    <!--백분율(min,max,value)-->
+    <meter value="2" min="0" max="10">2 of 10</meter> <br>
+    <meter value="0.6">60%</meter> <br>
+    <input type="file" name="file"> <!--파일첨부해주는 기능-->
+</body>
+</html>

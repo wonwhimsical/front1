@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.CSS속성 단위(2)</title>
+    <style>
+        /*
+            상대 단위: 고정되지 않고 어떤 기준에 따라서 유동적으로 변화하는 단위(%,em,rem)
+            em,rem => css상에서 font-size의 속성값에 비례해서 결정된다.(공통)
+                em(element, 해당 폰트 사이즈의 영역을 말함, 해당요소의 글꼴크기 1em으로 사용)
+                rem(root element, 상위(부모)태그, 루트요소 html의 글꼴크기를 1rem으로 사용)
+            
+            대부분 폰트 사이즈는 rem을 사용
+            padding, margin => 화면에 변화가 있는 경우 em을 많이 사용 (모바일, 태블릿, pc기준)
+        */
+        .containter {
+            font-size: 50px;
+        }
+        .containter, .title {  /*font- size = 16px 0.5em->16px*0.5=8px, 
+                                     1em-> 16px1=16px
+                                     2em->16px*2=32px
+                                     자식의 rem값은 부모의 font-size에 영향을 받는다.*/
+           
+            font-size: 2em;
+        }
+        .containter, .subtitle {
+            font-size: 1.5em;
+        }
+        .containter, .subtitle.leading {
+            font-size: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.container>div.title{title}+div.subtitle{subtitle}+div.subtitle.leading{subtitle leading} -->
+    <div class="container">
+        <div class="title">title</div>
+        <div class="subtitle">subtitle</div>
+        <div class="subtitle leading">subtitle leading</div>
+    </div>
+</body>
+</html>

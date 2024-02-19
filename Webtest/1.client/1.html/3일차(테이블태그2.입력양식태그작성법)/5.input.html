@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.input.html</title>
+</head>
+<body>
+    <center>    
+        <h3>웹프로그래밍을 하기 위한 입력 양식폼</h3>
+        <!--
+            form태그 => 데이터 전송폼(회원가입)
+                            method-> 데이터 전송방법(get(사이트 접속) -> url창 (정보가 노출되면서 전달되는 방식)
+                                             ,post(회원가입, 수정, 로그인할때)) -> url창 노출 X
+                            action=> 내 정보를 전달해주는 페이지명(~.jsp,).php.asp(확장자)
+                            input:text -> 무나열 입력 type="text" size="길이" value="저장된 값"
+                            태그명:속성명 => 단축키 type="password" =>암호 입력 받을 때 
+                            input:button                      type="button" => 버튼 작성 value="버튼의 이름"
+                                                                                 submit => 전송기능을 가진 버튼 생성
+                                                                                                    action="전송할 페이지" 전달하는 기능
+                            name=> 각 입력박스에 저장된 값을 구분하는 키워드 이름(=변수)
+        -->
+        <!-- 데이터가 전송 되지 않는 경우 => form 태그 밖에서 사용X
+            <textarea name="career" id="" cols="50" rows="15"></textarea> -->
+
+        <form action="register.jsp" method="post">
+            이름: <input type="text" name="name" size="11"><br>
+            암호: <input type="password" name="pwd" size="11"><br>
+            메일: <input type="text" name="email" size="11">
+            <p></p>
+            <!--
+                둘 중의 하나 값을 선택 => 성별, 결제 선택(현금,카드,계좌이체,포인트) -> name 같을 수 있음
+                radio항목 뒤에 checked 부여 -> 디폴트로 체크가 된다.
+            -->
+            성별: 
+            <input type="radio" name="gender"> 남자
+            <input type="radio" name="gender" checked> 여자 
+            <p></p>
+            <!--
+                ex) 취미 동시에 여러개를 선택하고 싶을 경우 -> name 같으면 안됨
+                      checkbox
+            -->
+            <input type="checkbox" name="movie"> 영화감상
+            <input type="checkbox" name="baseball" checked> 야구
+            <input type="checkbox" name="baduk"> 바둑
+            <p></p>
+            <!--
+                정해져 있는 값 중에서 하나를 선택(radio와 동일) => 목록상자(콤보박스)
+                option 항목 뒤에 selected, 기본값: 무조건 첫번째 항목이 selelcted(=디폴트값(=기본값))
+            -->
+            취업희망:
+            <select name="job" > 
+                <option >웹 프로그래머</option>
+                <option selected>빅 데이터(파이썬)</option>
+                <option >DB 전문가</option>
+                <option>보안 전문가</option>
+            </select>
+            <p></p>
+            <!--사용자로부터 여러줄의 문자열을 입력받을 때 textarea
+                    rows(행 수), cols(열 수)=> 자동 줄바꿈이 된다.
+            -->
+            경력사항:
+            <textarea name="career" id="" cols="50" rows="15"></textarea>
+            <p></p>
+            <p></p>
+            <input type="button" value="회원가입" onclick="alert('죄송합니다. 아직 준비중...')"> <!--기능이 없음, 속성을 통해 기능 만들 수 있음-->
+            <input type="submit" value="회원가입2"> <!--submit버튼 (실질적 전송버튼)-->
+            <input type="reset" value="초기화">
+        </form>
+    </center>
+</body>
+</html>

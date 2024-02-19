@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.const변수의 주의할점.html</title>
+</head>
+<body>
+    <script>
+        /*
+        const: 1. 상수화된 변수-> const 변수명=34-> 값이 고정 -> 중간에 값 변경X
+               2. const 변수명 ={key:value} -> 객체 생성, 객체 생성을 위한 만들어진 const 변수는 값을 중간에 변경할 수 있다.
+                               => 객체(저장하고 싶은 저장대상자)생성(공간생성) -> 데이터 변경 가능, 주소값을 변경할 수 없다.
+        */
+       const obj0={}; //빈객체 생성-> ex) 임대중 (객체: 주소가 있는 변수명)
+       const obj={id:7890}; //obj.id(객체명.속성명(key명))-> 호출방법
+       const obj2={bar:456};
+        console.log("변경전 obj.id :"+obj.id); //7890
+        //객체명.속성=값
+        obj.id=2345; //가능함
+        console.log("변경후 obj.id :"+obj.id); //2345, 내용이 변경되는 것이지 주소값이 변경되는 것은 아님
+
+        const user={
+            name:"Kim",
+            address:{
+                city:"Seoul" //객체 안에 또 다른 객체를 넣을 수 있음
+            }
+        };
+        console.log(user); // 전체출력
+        user.name="Lee" //Kim->Lee
+        console.log(user); //변경 후 전체출력 (갹체 포함 함수=메소드: 객체 안에 함수 넣으면 메소드가 됨, 그냥 함수=함수)
+
+    </script>
+</body>
+</html>

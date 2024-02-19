@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.Switch구문(1).html</title>
+</head>
+<body>
+    <script>
+        /*
+            선택문 => 다중 if문 대신 사용 (switch가 속도 빠름)
+            조건식을 case가 적게 나오게 설정하는 것이 중요 (case가 많으면 다중if가 나음)
+            switch(조건식){
+                case 값(숫자이거나 문자); -> 변수와 식은 사용할 수 없다.
+                    실행구문1;
+                    break;
+                case 값(숫자이거나 문자);
+                    실행구문2;
+                    break;
+                ,,,
+                default (생략가능)
+                    처리구문
+            }
+        */
+    /* Uncaught ReferenceError : su is not defined => su변수를 선언하지 않고 사용할 경우에 발생한 에러메세지 
+        변수를 선언하고 값을 저장하지 않은 경우 : undefined. 의도적으로 비어있다. 즉 해당변수가 어떤 객체도 가르키지 않는 경우 : null
+    */
+    // let su =50;        
+    let su=prompt("숫자를 입력하세요")
+    /*if (su%2==0)
+                document.write(su+"은 짝수입니다."+"<br>");
+                else
+                    document.write(su+"은 홀수입니다."+"<br>");
+    */
+   // Switch 구문
+   switch(su%2){
+        case 0: //뛰어쓰기 주의
+            document.write(su+"은 짝수입니다.<br>");
+            break; //안쓰면 그냥 순차문처럼 작동된다. {}를 루프라고한다. (실행범위), 원하지 않는 다른 항목까지 처리가 된다.
+        case 1:
+            document.write(su+"은 홀수입니다.<br>");
+            break;
+   }
+   document.write("Switch구문 연습종료<p>");
+    
+    //추가 (조건식)? 참: 거짓;
+    let su2=(su%2==0)? "짝수":"홀수";
+    document.write("su2"+su2);
+
+
+    </script>
+</body>
+</html>

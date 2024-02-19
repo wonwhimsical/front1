@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <style>
+        body {
+            text-align: center;
+            margin: auto;
+            background-color: #e0ffff;
+        }
+        span {
+            font-weight: bold;
+            color: blueviolet;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        table {
+            margin: 10px auto;
+            width: 350px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        tr,td {
+            border: 1px solid black;
+            height: 30px;
+        }
+        .td1 { 
+            background-color: #b0e0e6;
+        }
+        .td2 {
+            background-color: #e0ffff;
+        }
+    </style>
+</head>
+<body>
+    <span>글 삭제</span>
+    <form action="#">
+        <table>
+            <tr>
+                <td class="td1">비밀번호를 입력해 주세요.</td>
+            </tr>
+            <tr>
+                <td class="td2">비밀번호 :
+                    <input type="password" name="passwd" size="8" maxlength="8">
+                </td>
+            </tr>
+            <tr>
+                <td class="td1">
+                    <input type="button" value="글 삭제" onclick="document.location='Deete.html'">
+                    <input type="button" value="글 목록" onclick="document.location='list.html'">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

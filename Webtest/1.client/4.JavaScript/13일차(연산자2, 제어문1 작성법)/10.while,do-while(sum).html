@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.While. do-while 구문.html</title>
+</head>
+<body>
+    <script>
+        //문제 1 (1~5의 합계구하기)
+       /* let i=1, sum=0; //반복할 횟수, 합계
+        while(i<=5){
+            sum+=i;   //sum=sum+=i;
+            i++;
+            document.write("더한 값:"+(i-1)); //i-1인 이유: 마지막 문이 i++;이기에 하나를 더 더해서 출력함(이를 방지하기위해 사용)
+            document.write("합계값:"+sum+"<br>");
+        }
+        document.write("합계값:"+sum+"<br>");*/
+
+        //문제1 방식2
+        let i=1, sum=0; //반복할 횟수, 합계
+        let n=prompt("합계를 구할 숫자를 입력하세요");
+
+        /*while(i<=n){
+            sum+=i;   //sum=sum+=i;
+            document.write("i=>:"+i,"sum=>"+sum+"<br>"); // i++;앞에 넣으면 더 더해지지 않음
+            i++;     
+        }
+        document.write("합계값:"+sum+"<br>");*/
+
+        //문제1 방식3
+        do{
+            sum+=i;   //sum=sum+=i;
+            document.write("i=>:"+i,"sum=>"+sum+"<br>"); // i++;앞에 넣으면 더 더해지지 않음
+            i++;     
+        } while(i<=n)5;
+        document.write("합계값:"+sum+"<br>");
+
+        /*
+        i=1  sum=0+i=1
+        i=2  sum=1+2=3
+        i=3  sum=3+3=6
+        i=4  sum=6+4=10
+        i=5  sum=10+5=15
+        */
+       
+    </script>
+</body>
+</html>

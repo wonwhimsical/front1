@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.함수 작성법2.html</title>
+    <script>
+        //함수선언 => 함수를 왜 작성?
+        //프로그램을 작성: 단순한 문장이자만 반복적으로 계속 작성해야되는 구문=> 코딩양이 늘어남, 개발시간도 늘어남
+        //목적1. 개발시간을 단축, 목적2. 계속 사용(=재사용) => 함수를 작성
+    /*    let x=12;
+        let y=67;
+
+        if(x>y)
+            document.write("큰값은"+x+"입니다.<br>")
+        else
+            document.write("큰값은"+y+"입니다.<br>")
+
+        let a=97;
+        let b=23;
+
+        if(a>b)
+            document.write("큰값은"+a+"입니다.<br>")
+        else
+            document.write("큰값은"+b+"입니다.<br>")*/
+
+        // 추가
+        //big3 함수작성
+        //let x2 = parseInt(x); ->309page 문제 6힌트
+        //let y2 = parseInt(y);
+        function big3(x,y){ //계산: 매개변수 2개 필요, 반환값X
+            if(parseInt(x)>parseInt(y))    //-> 이게 정석
+                document.write("큰값은"+x+"입니다.<br>");
+            else
+                document.write("큰값은"+y+"입니다.<br>");
+        }
+
+        function big(x,y){ //계산: 매개변수 2개 필요, 반환값X
+            if(x>y)
+                document.write("큰값은"+x+"입니다.<br>");
+            else
+                document.write("큰값은"+y+"입니다.<br>");
+        }
+
+        function big2(x,y){ //계산: 매개변수 2개 필요, 반환값O]O
+            if(x>y)
+                return x; //return 계산결과값(변수) or 수식(계산식)
+            else //x<y
+                return y;
+        }
+        //small
+        function small(a,b){
+            if(a<b)
+                return a;
+            else(a>b)
+                return b;
+        }
+        function small1(a,b){ //계산: 매개변수 2개 필요, 반환값X
+            if(a>b)
+                document.write("작은값은"+a+"입니다.<br>");
+            else
+                document.write("작은값은"+b+"입니다.<br>");
+        }
+    </script>
+</head>
+<body>
+    <script>
+        //함수호출(call)
+        big(23,56); //함수명(전달할 값,,,) or 함수명()
+        big(12,98);
+        big(44,69);
+        big(76,90);
+        let x=big2(34500,23900);
+        document.write("큰값은"+x+"입니다.<br>")
+
+        let a=small(1200,700);
+        document.write("작은값은"+a+"입니다.<br>");
+        
+        small1(59,6);
+    </script>
+</body>
+</html>

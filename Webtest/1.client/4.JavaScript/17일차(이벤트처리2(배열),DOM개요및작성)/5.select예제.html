@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.select예제.html</title>
+    <script>
+        function fg_color(form){ //form이 전달받는 것이 document.f_list.form임 (전달받으면 코딩이 짧아짐)
+            let list= form.selectedIndex; // 전달O -> 코딩이 복잡X, 단순O  (항목 구분 코드 : selectedIndex;)
+            // 전달 되어 있지 않은 경우 let list = document.f_list.form.selectedIndex;가 됨
+            // alert(list);0~3이 나옴 
+
+            /*
+                document.fgColor(=글자색(전경색))<->bgColor(배경색) = 내가 선택한 색깔
+                -값을 전달 받지 않았을 경우
+                document.f_list.form.options[내가 선택한 인덱스번호].text(겉의 항목이름)
+                document.f_list.form.options[내가 선택한 인덱스번호].value(내부 항목이름)
+            */
+            //alert(document.f_list.form.options[f_list.form.selectedIndex].value); //값을 전달받지 않았을 경우
+            //alert(form.options[list].text); //list=form.selectedIndex임 -> 전달받으면 작성길이가 줄어든다 (매개변수를 받는 것이 좋다.)
+
+            document.fgColor=form.options[list].value; //실제 기능이 이루어지는 부분-글자색변경
+            //document.bgColor=form.options[list].value; //배경색 변경
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h3>글자색 변경하기</h3>
+        원하시는 색상을 선택하시면 글자의 색깔이 변경됩니다. <p></p>
+        <form name="f_list">
+            <!--항목이 4개(size)-리스트 박스가 됨 -> size를 작성하지 않으면 콤보박스가 된다.
+                (multiple을 넣으면 ctrl누르고 다중선택가능) : 동시에 한개이상의 항목을 다중 선택할 때 필요로하는 속성  -> 리스트 박스만 가능
+                <select name="form" size="4" multiple> 
+            -->
+            <select name="form" onchange="fg_color(document.f_list.form)"><!--select태그의 정보를 전달함(객체)--> 
+                <option value="blue">파랑색</option> <!--옵션 배열임, 바깥값과 value의 값이 다를 수 있다.-->
+                <option value="green" selected>초록색</option>
+                <option value="orange">주황색</option>
+                <option value="gray">회색</option>
+            </select>
+        </form>
+    </center>
+</body>
+</html>

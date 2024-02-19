@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.domcreate.html</title>
+    <script>
+        window.onload=function(){
+            //element or nod => 태그를 말한다.
+
+            //1. h1태그 생성-> document,creatElement(생성할 태그명)
+            let header=document.createElement("h1"); //<h1></h1>
+            // alert(header); //[object HTMLHeadingElement]
+
+            //2. createTextNode('화면에 출력할 문자열')-내용 집어넣기
+            let textNode=document.createTextNode("Hello,DOM 연습중!!!");
+
+            //3. <h1>Hello,Dom 연습중</h1>=> 부모태그명.appendChild(자식태그)
+            header.appendChild(textNode); 
+
+            /*
+                1.간단한 내용, 짧은 구문:createTextNode or innerHTML 별차이가 없다.
+                2.내요이 복잡(텍스트+태그)-> innerHTML 사용할 것.
+            */
+
+            //4.body에 자식태그로써 추가
+            document.body.appendChild(header);
+        }
+    </script>
+</head>
+<body>
+    <!-- Html,css는 정적 디자인만 가능, 자바스크립트는 동적 디자인 가능 -->
+    <!-- <h1>Hello,Dom 연습중</h1> -->
+
+</body>
+</html>

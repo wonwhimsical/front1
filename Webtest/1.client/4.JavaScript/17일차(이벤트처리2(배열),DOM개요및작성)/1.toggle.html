@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.Toggle.html</title>
+    <script>
+        function toggle(){
+            // alert("toggle()") //에러를 확인하는 코딩(디버깅 코딩필요)
+
+        //방식1
+        //     let b_val=document.f.b_name.value; //body안의 폼태그 이름안의 인풋이름안의 value값의미 -> document.form이름.버튼이름(입력양식).속성명=(기본),
+        //                                                                                         //document.form이름.버튼이름(입력양식).속성명=값(변형)
+        //     // alert(b_val); -> 또는 console 이용
+        //     if(b_val=="네이버")
+        //         document.f.b_name.value="다음"; //내가 이 안에 선언한 지역변수 b_val를 작성하면 안됨 (document~~~써야함)
+        //     else
+        //         document.f.b_name.value="네이버";
+
+            let b_val=document.getElementById("b_name").value; //객체명.속성명, 객체명.메서드명(~)
+            // alert(b_val);(디버깅)
+            let text=(b_val=="네이버")?"다음":"네이버"; //삼항연산자
+            document.f.b_name.value=text;
+            //document.getElementById("b_name").value=text;=>p.423참조할 것.
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>버튼을 눌러주세요.</h1>
+        <form name="f">
+            <input type="button" value="네이버" name="b_name" onclick="toggle()"id="b_name"> <!--name은 css의 class 같은 선택자라고 생각하면 됨-->
+        </form>
+    </center>
+</body>
+</html>

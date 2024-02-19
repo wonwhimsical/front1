@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String예제.html</title>
+</head>
+<body>
+    <script>
+        //입력받은 문자열을 전달 받아서 처리해주는 함수
+        function StringPrint(s){
+            //1.concat : 문자열을 결합시키는 함수 (문자열 +문자열=문자열)
+            document.write("s.concat('test'):"+s.concat("test")+"<br>"); // s는 전달받은(prompt에서) 값+"test"가 같이 나옴
+
+            //2.substring(시작 인덱스번호(포함), 종료인덱스번호(바로 앞번호까지 포함(-1)))
+            document.write("s.substring(1,4):"+s.substring(1,4)+"<br>"); //1~3(4-1)까지의 특정문자열을 뽑아내라 ell나옴-> h는 0번 o는 4번이므로 두개 빠짐
+
+            //3. 시작인덱스 번호부터 문자열끝까지
+            document.write("s.substring(1):"+s.substring(1)+"<br>"); //뒷범위를 안 주면 됨(즉 ello 나옴)
+
+            //4. toUpperCase()대문자로 변환 <->toLowerCase()소문자로 변환
+            document.write("s.toUpperCase():"+s.toUpperCase()+"<br>");
+            document.write("s.toLowerCase():"+s.toLowerCase()+"<br>");
+
+            //5.특정문자열을 변경 : replace(변경전 단어, 변경후 단어)
+            document.write("s.replace():"+s.replace('l','t')+"<br>"); //처음에 만나는 값만 바꿈(hello->hetlo)
+
+            //6. 문자열의 길이를 구하는 경우 : 자바스크립트 형식: 문자열.length(괄호 없어야함) / 자바 형식: 속성명 자바(문자열.length()) -괄호 있어야 함
+            document.write("s.length():"+s.length+"<br>"); //s.length()는 자바 OK
+
+            //7.문자열 중에서 특정위치에 있는 문자 출력 : charAt(인덱스번호)
+            document.write("s.charAt(2):"+s.charAt(2)+"<br>"); //2이면 012이므로 3번째 문자열 위치의 것이 나옴
+
+            //8.특정문자의 인덱스위치를 물어볼 수 있다. : indexOf('찾는 문자')=> 인덱스 번호
+            document.write("s.indexOf():"+s.indexOf('l')+"<br>"); //앞에서부터 검색을 해서 처음찾은 번호를 알려준다(return해준다).
+
+            //9.뒤에서부터 찾는 경우: lastIndexOf('찾는 문자')-> 뒤에서 찾지만 인덱스번호 값은 앞에서부터 계산함
+            document.write("s.lastIndexOf():"+s.lastIndexOf('l')+"<br>"); //뒤에서부터나온 첫번째값인 l의 인덱스번호로 3이 나옴.
+
+            //10.공백을 제거해주는 함수 : trim()=>"abcd    "- 공백도 문자열 길이에 포함된다.(공백은 인덱스번호가 생기지 않는다.)
+            document.write("s.trim():"+s.trim()+"<br>");
+
+            //11. 특정 구분자를 이용해서 분리시키는 메소드 : split()  - 자주 씀 외우셈
+            document.write("s.split():"+s.split(",")+"<br>"); //,를 기준으로 뽑아내라 출력했을 때는 다르지 않을 수 있지만 변수로 처리하게 되면 달라짐(예제참고)
+            let t=s.split(","); //배열 형태로 저장
+            for(let i=0;i<t.length;i++){
+                document.write("t:"+t[i]+"<br>"); // 분리된 것을 육안으로 확인가능
+            }
+        }
+        let input=prompt("아무 문자열이나 입력하세요!");
+        StringPrint(input); //문자열 전달
+    </script>
+</body>
+</html>

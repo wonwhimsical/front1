@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.form태그관련예제.html</title>
+    <script>
+        function test(){ //유효성 검사 - 이름란에 글자를 입력하지 않았다면
+            if(document.myForm.name.value==""){
+                alert("이름은 필수 입력입니다.");
+                document.myForm.name.focus(); //~.focus() 커서를 넣어달라
+                return false; //이름을 입력하기 전까지는 밑의 if구문은 실행X //return;로 쓰기도 함 (탈출문의 종류: break, continue, return)
+            }
+            if(document.myForm.tel.value==""){
+                alert("전번은 필수 입력입니다.");
+                document.myForm.tel.focus(); //~.focus() 커서를 넣어달라
+                return false; 
+            }
+            if(document.myForm.pwd.value==""){
+                alert("전번은 필수 입력입니다.");
+                document.myForm.pwd.focus(); //~.focus() 커서를 넣어달라
+                return false; 
+            }
+            //다 입력 : action="register.jsp"로 이동해야함
+            //형식) document.폼객체이름.submit()
+            document.myForm.submit(); //input:submit은 이 문장을 생략해도 됨 내부에 들어있음
+        }
+        function test2(){ //5자이상 8자이하이면 입력을 허용
+            if(document.myForm.pwd.value!=""){
+                if(document.myForm.pwd.value.length>=5&&document.myForm.pwd.value.length<=8){
+                    alert("정상적으로 암호를 입력했군요")
+                }else{
+                    alert("암호는 5자이상~8자이하가 되어야합니다.")
+                    document.myForm.pwd.focus();
+                    return false;
+                }
+            }
+        }
+        function test3(){
+            document.myForm.name.focus(); //reset버튼은 다 지우는 건데 커서가 들어가지 않는 것이 아쉽다. 그래서함
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm" method="post" action="Register.jsp">
+        이름: <input type="text" name="name" id="name"> <br>
+        전번: <input type="text" name="tel" id="tel"> <br>
+        암호: <input type="password" name="pwd" id="pwd"> <p></p>
+        <input type="button" value="전송" onclick="test()"> <br> <!--submit은 자동으로 form의 action값으로 간다-->
+        <input type="button" value="암호입력" onclick="test2()"> <br>
+        <input type="reset" value="다시입력" onclick="test3()"> <br>
+    </form>
+</body>
+</html>

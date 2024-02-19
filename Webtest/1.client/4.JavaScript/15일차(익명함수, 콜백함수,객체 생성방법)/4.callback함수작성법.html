@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.CallBack함수작성법.html</title>
+</head>
+<body>
+    <script>
+        /*
+            콜백함수=> 함수(caller) : 다른 함수를 부르는 경우(work function)
+                      매개변수 전달(숫자, 문자열, 논리적인값)X => 함수이름이 전달
+                      매개변수 형태로 함수이릉이 전달되서 호출된 함수 내부에서 실행이 되는 함수
+                      직원이 다른 직원을 데려온다. 다른 기능을 가져와서 대신 사용할 수 있는 함수
+        */
+       function callFun(other){ //other가 무엇을 받을 지 모름, 전달되는 값을 통해 문자, 숫자 등을 파악함
+        for(let i=0;i<5;i++){ //i는 블럭변수로 이 폼을 벗어나면 사라짐
+            other(); //함수명() or 함수명(x,y,z)
+            //함수내부에서 다른 특정함수를 5번 출력하게 함
+        }
+       }
+       function test(){
+            console.log("Happy Day!");
+       }
+    //    let test=function(){console.log("Happy Day!");} -익명 함수version
+       callFun(test); // callFun 내부의 test는 함수명다. 문자열일 경우 callFun("test")
+                      // callFun에서 test함수를 불러와 내부에서 돌릴 수 있다.=> 콜백함수 
+       console.log("---함수내부에서 익병함수 형태로 함수이름을 전달받아 실행")
+
+
+    //    여기서 부터는 다시 이해 필요
+       callFun(function(){
+          console.log('Happy day!');
+       });
+       //리액트에서 화살표함수 함수X()=>{함수 내용}
+       callFun(()=>{
+         console.log('화살표함수를 이용해서 익명함수호출됨!');
+       });
+    </script>
+</body>
+</html>

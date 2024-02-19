@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.color.html(색깔을 적용시키는 방법3)</title>
+    <style>
+        h2#text1 {
+            color: red; /* 영문 글자(자동 완성 기능 색깔로 표시(영어단어 선택))*/
+            background: black;
+        }
+        h2#text2 {
+            color: #FF0000; 
+            background-color: #000000;  
+            /* 검정색<->#255 255 255(흰색)
+                0,0,0 : 검정색, 255,255,255 : 흰색, 255,0,0: 빨간색, 0,255,0: 초록색, 0,0,255 : 파란색, 255,255,0 : 노란색
+            */
+        }
+        h2#text3{ /*우선순위 (인라인 style > embedd style 태그 > 불러오기(link or @import)*/
+            color: rgb(255, 0, 0);
+            background-color: rgb(255, 255, 255); /*어차피 안 먹는다 밑에 인라인요소로 style준 것이 우선순위에 해당.*/
+        }
+    </style>
+</head>
+<body><!--h2#text$*3-->
+    <h2 id="text1">color name: red</h2>
+    <h2 id="text2">16진수 #RGB (0~255)</h2>
+    <h2 id="text3" style="background: rgb(255, 255, 100); color: #FF0000;">RGB함수 : rgb (255,0,0)</h2>
+</body>
+</html>

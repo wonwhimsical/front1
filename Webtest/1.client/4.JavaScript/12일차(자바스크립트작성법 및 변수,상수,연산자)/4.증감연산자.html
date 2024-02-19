@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. 증감연산자.html</title>
+</head>
+<body>
+    <script>
+        /*
+        ++ => 변수 앞이나 뒤에 붙일 수 있음(a++(후위연산자),++a(전위연산자)) : 변수의 값을 하나 증가시켜라
+        -- => 변수 앞 또는 뒤에 붙일 수 있음(--a(전위연산자),a--(후위 연산자)): 변수의 값을 하나 감소시켜라
+        */
+        let a=10, b=20;
+        document.write("a=>"+a+"<br>");
+        document.write("b=>"+b+"<br>");
+
+        let c=a++;  //a값을 먼저 보여주고 계산 let c=a; a=a+1;
+        document.write("a++=>"+c+"<br>"); //10
+
+        let d=++a; //계산 후 a값을 보여준다 a=a+1; let d=a;
+        document.write("++a=>"+d+"<br>");  //12
+    
+        let e=b--; //b값을 먼저 보여주고 계산 let e=b; b=b-1;
+        document.write("--b=>"+e+"<br>");  //20
+        
+        let f=--b; //계산 후 b값을 보여준다 b=b-1; let f=b;
+        document.write("b--=>"+f+"<br>");  //18
+    </script>
+</body>
+</html>

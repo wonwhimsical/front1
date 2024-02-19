@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.Switch 구문(2).html</title>
+</head>
+<body>
+    <script>
+        let code=prompt("학과 코드를 입력하세요."); //1,2,3,4
+        switch (code){
+            //정보처리전공
+            case "1":  // 문자열 상수
+                document.write("정보처리 전공입니다.");
+                break;
+            //인터넷 정보 전공
+            case "2":
+                document.write("인터넷정보 전공입니다.");
+                break;
+            //전자상거래 전공
+            case "3":
+                document.write("전자상거래 전공입니다.");
+                break;
+            //멀티미디어 전공
+            case "4":
+                document.write("멀티미디어 전공입니다.");
+                break;
+            //1~4가 아닌 경우 default
+            default:  //다중 if문 맨 끝의 else와 같은 역할
+                document.write("없는 코드 입니다.")
+                break;
+        }
+    </script>
+</body>
+</html>

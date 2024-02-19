@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.DOM2.html</title>
+    <script>
+        //기본형식: function test(){}
+        //변형형식 : window.on이벤트 종류명 =처리구문(함수이용)-> 익명함수 일떄 (function)
+        window.onload=function (){
+            let spans=document.getElementsByTagName("span")
+           for(let i=0;i<spans.length;i++){
+                if(i%2==1)
+                    spans[i].innerHTML="테스트중 입니다.";
+                else //짝수일 경우
+                    spans[i].innerHTML="임시!";
+            } //for
+        }//onload
+    </script>
+</head>
+<!-- <body onload="test()"> -->
+<body>
+    <span>연습1</span> <br>
+    <span>연습2</span> <br>
+    <span>연습3</span> <br>
+</body>
+</html>

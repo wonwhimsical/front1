@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. 중첩 if문.html</title>
+</head>
+<body>
+    <script>
+        /*
+        1. 1부터 100까지의 숫자를 입력받아서 짝술 홀수를 판별하시오.
+        2.사용자로부터 값을 입력받아서 짝수, 홀수를 판별하시오.
+            2의 배수 => 어떤수를 /2 했을 때 나머지가 0인 경우 -> 짝수
+        */
+
+        // 2번문제 : 입력받은 값 짝.홀 구분
+        // let su =prompt("숫자를 입력하세요");
+        // // let su=30;
+        // if (su%2==0)
+        //     document.write(su+"짝수입니다."); 
+        //      if(su%2!=0) //if(su%2==1)도 홀수임
+        //          document.write(su+"홀수") 
+        //       else
+        //          document.writer(su+"홀수입니다.");
+
+        // 1번 문제 : 1~100까지의 값 짝,홀 구분
+        let su=prompt("숫자를 입력하세요");  
+        /*숫자=>"90" (prompt로 입력을 받으면 숫자가 아닌 문자열로 인식=> 문자열 상수) = 외부적 상수, 내부적 문자열
+            문자는 계산이 안됨 
+        */  
+        
+         // su(95)=parselnt("95")-> 최신브라우저는 자동전환이 되어 필요 없지만 구형 브라우저에서는 필요
+        su=parseInt(su); 
+     
+         //1~100까지의 입력을 받았는지 체크
+        if(su>=1&&su<=100) {
+                if (su%2==0)
+                    document.write(su+"은 짝수입니다."+"<br>");
+                    else
+                        document.write(su+"은 홀수입니다."+"<br>");
+        } else {
+            alert("1~100사이의 값만 입력이 가능합니다.");
+        }
+        document.write("if문 종료");
+</script>
+</body>
+</html>

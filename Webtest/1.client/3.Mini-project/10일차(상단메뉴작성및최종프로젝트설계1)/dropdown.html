@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드롭다운 상단메뉴</title>
+    <link rel="stylesheet" href="./css/droptop.css" type="text/css">
+</head>
+<body>
+    <!--상단메뉴(4개) ul>li*4>a 
+    서브메뉴 : 어느 메뉴 앞에 마우스를 갖다댈 때 메뉴가 나오게 할 것인가?
+    정해진 메뉴의 li 태그 내부에 ul>li>a 주면 됨
+    -->
+    <ul class="dropdownmenu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Service</a>
+            <!--ul>li*3>a_1-->
+            <ul >
+                <li><a href="">HTML5</a></li>
+    <link rel="stylesheet" href="./css/droptop.css" type="text/css">
+                <li><a href="">CSS3</a>
+                    <!-- ul>li>a_2-->
+                    <ul>
+                        <li><a href="#">Menu1</a></li>
+                        <li><a href="#">Menu2</a>
+                        <!--ul>li>a_3-->
+                            <ul>
+                                <li><a href="">SubMenu</a></li>
+                            </ul>
+                            <!--3-->
+                        </li>
+                    </ul>
+                    <!--2-->
+                </li>
+                <li><a href="">JavaScript</a></li>
+            </ul>
+            <!--1 -->
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</body>
+</html>

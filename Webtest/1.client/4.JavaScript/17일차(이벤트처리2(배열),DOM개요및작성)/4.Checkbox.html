@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.Checkbox.html</title>
+    <script>
+        //let sel=""; //전역변수 설정 - 선택한 그림을 저장할 변수(문자열)-> 숫자는 괜찮은데 문자는 어울리지 않음
+
+        function test(){
+            //만약에 1.gif를 선택했다면 (돔방식=id 있을 때/ 없을때=document방식)
+            //"1번"+"1번"=> 기존문자열 이미 저장+ 추가된 내용이 결합되어 누적됨
+
+            let sel=""; //벗어나면 값이 날아감(지역변수)
+            if((document.myForm.a1.checked==false)&&
+               (document.myForm.a2.checked==false)&&
+               (document.myForm.a3.checked==false)){
+                alert("최소 1개의 그림은 선택해야합니다.");
+            }else{
+                if(document.myForm.a1.checked) //참인 경우 ==true 생략가능
+                    sel=sel+"1번"; //""+"1번"=>"1번"나옴
+                if(document.myForm.a2.checked)
+                    sel=sel+"2번"; //"1번"+"2번"=>"1번 2번"나옴(1번을 작동한 경우)
+                if(document.myForm.a3.checked)
+                    sel=sel+"3번"; //"1번 2번"+"2번"=>"1번 2번"나옴(1번을 작동한 경우)
+
+                alert(sel+"그림이 맘에 드시는 군요!"); //sel에 앞의 값이 자꾸 쌓임, 해결 필요 (전역변수로 넣어서 그랬음)
+            } 
+                
+        }
+    </script>
+</head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+    <!--
+        화면 디자인한 이미지, 글=> 마우스 오른쪽 버튼, 금지, 드래그&드롭
+        oncontextmenu(오른쪽버튼의미)=="return false"-> 마우스 오른 족 버튼 금지
+        ondragstart="return false"-> 드래그 금지
+        onselectstart="return fasle" => 선택(블럭지정 금지)
+        맹점 : 영역 바깥에서 들어오면 된다.
+    -->
+    <form name="myForm">
+        <!--Checkbox의 특성: 여러 개를 동시에 선택->배열 아님, 각각의 변수(name)필요.-->
+        <input type="checkbox" name="a1"><img src="/Webtest/1.client/1.html/images/1.gif">
+        <input type="checkbox" name="a2"><img src="/Webtest/1.client/1.html/images/2.gif">
+        <input type="checkbox" name="a3"><img src="/Webtest/1.client/1.html/images/3.gif">
+            <p></p>
+            <input type="button" value="확인(결재)" onclick="test()">
+        </input>
+    </form>
+</body>
+</html>

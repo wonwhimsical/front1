@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.sangpum.html</title>
+</head>
+<body>
+    <div> <!--div(전체 영역을 설정할 때 사용하는 태그), 교수님과 한 것-->
+        <h1>
+            <center>상품주문서</center>
+        </h1>
+        <form action="" method="post">
+            <fieldset>
+                <legend>개인정보</legend>
+                <ul>
+                    <li><!--label을 만드는 방법, 필수는 아님 선택임, 모바일에서 쓰는 경향있음, 쓰는 것,쓰지않는 것 상관 없을 때는 안 쓰는 것이 나음-->
+                        <label for="uname">이름</label><!--name. id를 같이 사용하는 경우 (동일한 이름을 부여)-->
+                        <input type="text" name="uname" id="uname" placeholder="여백없이 입력" required>
+                    </li>
+                    <li>
+                        <label for="tel">전화번호</label>
+                        <input type="text" name="tel" id="tel" placeholder="연락가능한 번호"required>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset><!--배송지 정보-->
+                <legend>배송지 정보</legend>
+                <ul>
+                    <li>
+                        <label for="address">주소</label>
+                        <input type="text" name="address" id="address" required size="40">
+                    </li>
+                    <li>
+                        <label for="tel2">전번</label>
+                        <input type="tel2" name="tel2" id="tel2">
+                    </li>
+                    <li>
+                        <label for="memo">메모</label>
+                        <textarea name="memo" id="memo" cols="50" rows="3"></textarea>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset><!--주문 정보-->
+                <legend>주문 정보</legend>
+                <ul>
+                    <li>
+                        <label ><input type="checkbox" name="antigua" id="antigua"> 과테말라 안티구아(100g)</label> 
+                        <!-- <input type="text" name="anti" id="anti" value="0">개 -->
+                        <input type="number" name="antigua" id="antigua" value="0" min="0" max="5">개
+                    </li>
+                    <li>
+                        <label ><input type="checkbox" name="mandeling" id="mandeling"> 인도네시아 만델링(100g)</label> 
+                        <input type="number" name="mandeling" id="mandeling" value="0" min="0" max="5">개
+                    </li>
+                    <li>
+                        <label ><input type="checkbox" name="tamra" id="tamra"> 탐라는도다(블렌딩)</label> 
+                        <input type="number" name="tamra" id="tamra" value="0" min="0" max="5">개
+                    </li>
+                 </ul>
+            </fieldset><br>
+            <div>
+                <center>
+                    <input type="submit" value="주문하기">
+                    <input type="reset" value="다시 작성">
+                </center>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

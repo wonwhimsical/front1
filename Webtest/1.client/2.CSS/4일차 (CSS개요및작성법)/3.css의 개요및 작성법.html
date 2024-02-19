@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.CSS의 개요 및 작성법</title>
+    <style type="text/css">
+        /*
+            여러줄 주석 (자바스크립트, 자바 주석과 동일)
+            2. 공통적으로 사용하는 색깔, 이미지, 글꼴 등을 head태그 영역에 선언해서 사용하는 방법 =>  Embedd방식
+                형식) 스타일 적용 태그,,(선택자),,:{속성명: 속성값;}
+                특징: 현재 보고 있는 페이지만 적용=> 링크된 다른 페이지에도 반영 X
+        */
+            /* h4,h3{font-family: 돋움체; 
+                      color: green; 
+                      font-size: 27pt;
+            } */
+        /* @import url(mysite.css);*/  /*@import url(경로포함해서 불러올css파일명
+                                                              color:darked;)불러오기2 */
+        /* @import url('mysite');*/     
+                                                         
+        @import "mysite.css";
+    </style>
+    <link rel="stylesheet" type="text/css"  href="./sub/test.css">
+    <!--
+        3.자주 사용되거나 반복적인 스타일이 있으면 파일로 만들어서 불러온다.
+        link태그 사용
+                rel(스타일시트 파일) type="텍스트형태의 CSS파일임을 알려줌"
+                href="경로(상대경로) 포함해서 불러올 파일명"
+
+    -->
+    <!--불러오기1, 가장 보편적-->
+
+</head>
+<body>
+    <header><h3>CSS의 개요 및 특징</h3></header>
+    <section>
+        <!--
+            1. 인라인방식(style속성을 이용)형식) style="속성명:값; 속성명2:값;"
+                특정한 태그에만 스타일을 적용시킬 때 사용 -> 같은 태그에 동일한 디자인 부여가 원칙\
+                단점) 동일한 태그에 여러번 적용시키는 경우 -> 복사 불편), 구조가 복잡
+                특징 => 우선 순위가 높다.>Embedd보다 높다.
+        -->
+        <header>
+            <h4 >스타일시트의 장점</h4>
+        </header>
+        <article> <!-- article*2>ol>li-->
+            <ol>
+                <li>디자인 시간이 줄어든다.</li>
+                <li>문서의 로딩속도가 빨라진다.</li>
+            </ol>
+        </article>
+
+        <article>
+            <ol><h4 style="font-family: 바탕체; background: yellow; color:red;">용어정리</h4>
+                <li>스타일(style): 문서의 글꼴, 크기, 간격 등의 출력형태(=레이아웃)에 영향을 미치는 요소</li>
+                <li>스타일시트(Style Sheet): 스타일의 내용 만을 별도로 모아서 &lt;head&gt;태그 영역에 선언된 형태</li>
+            </ol>
+        </article>
+    </section>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 글쓰기</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <style>
+        body {
+            background: #e0ffff;
+            text-align: center;
+        }
+        span {
+            /* display: flex;
+            justify-content: center;  */
+            margin: 0 auto;
+            font-weight: bold;
+            color: blueviolet;
+        }
+        table {
+            margin: 0 auto;
+            width: 400px; 
+            background-color: #e0ffff;
+            border: 1px solid black;
+            border-collapse: collapse; /*이중선 제거*/
+        }
+        /*같은 태그이면서 서로 다른 스타일 적용 -> 클래스 선택자 부여*/
+        .td1,.td6 { /*타이틀 제목*/
+            text-align: center;
+            width: 70px;
+            background-color: #b0e0e6;
+        }
+        td { /*본문내용*/
+            width: 330px;
+            border: 1px solid black;
+            background-color: #e0ffff;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <span>글쓰기</span> <br>
+    <!-- form>table>tr*7>td*2 -->
+    <form action="#" method="post" name="writeform" onsuhbmit="">
+        <table> 
+            <tr>
+                <td colspan="2" style="background-color: #b0e0e6; text-align: right;">
+                <a href="list.html">글목록</a>
+                </td>
+                <!-- <td></td> -->
+            </tr>
+            <tr>
+                <td class="td1">이름</td>
+                <td>
+                    <input type="text" name="writer " size="10" maxlength="10">
+                </td>
+            </tr>
+            <!--제목-->
+            <tr>
+                <td class="td1">제목</td>
+                <td>
+                    <input type="text" name="subject " size="40" maxlength="40">
+                </td>
+            </tr>
+            <!-- 이메일 -->
+            <tr>
+                <td class="td1">Email</td>
+                <td>
+                    <input type="text" name="email " size="40" maxlength="40">
+                </td>
+            </tr>
+            <!-- 내용 -->
+            <tr>
+                <td class="td1">내용</td>
+                <td>
+                    <textarea name="content" cols="42" rows="13"></textarea>
+                </td>
+            </tr>
+            <!-- 비밀번호 -->
+            <tr>
+                <td class="td1">비밀번호</td>
+                <td>
+                    <input type="password" name="passwd " size="8" maxlength="8">
+                </td>
+            </tr>
+            <!--버튼의 종류(글쓰기 버튼, 다시작성버튼, 목록보기 버튼) -->
+            <tr>
+                <td colspan="2"class="td6">
+                    <input type="submit" value="글쓰기">
+                    <input type="reset" value="다시작성">
+                    <input type="button" value="목록보기" onclick="document.location='list.html'">
+                </td>
+                <!-- <td></td> -->
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
